@@ -1,7 +1,7 @@
 from enemies.goblin import Goblin
 from heros.equipment.weapons import Weapon
 from heros.equipment.armor import Armor
-from heros.hero import Hero
+from heros.heros.hero import Hero
 
 
 ARENA_NAME = "Paradox Ring"

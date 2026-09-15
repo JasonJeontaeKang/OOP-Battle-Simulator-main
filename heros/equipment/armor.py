@@ -16,25 +16,9 @@ class Armor(Equipment):
         self.durability = durability
 
         print(
-            f"{self.rarity.title()} {self.name} "
+            f"{self.rarity} {self.name} "
             f"created with {self.durability} durability."
         )
-
-    @staticmethod
-    def generate_rarity():
-
-        roll = random.randint(1, 1000)
-
-        if roll > 990:
-            return "mythic", 1000
-        elif roll > 900:
-            return "legendary", 500
-        elif roll > 750:
-            return "rare", 250
-        elif roll > 300:
-            return "uncommon", 100
-        else:
-            return "common", 25
 
     def absorb_damage(self, damage):
         self.durability -= damage

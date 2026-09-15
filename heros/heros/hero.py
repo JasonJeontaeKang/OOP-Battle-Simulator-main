@@ -5,7 +5,6 @@ class Hero:
 
     def __init__(self, name):
         self.name = name
-
         self.health = random.randint(100, 150)
         self.base_attack = random.randint(10, 25)
 
