@@ -6,7 +6,25 @@ from heros.heros.hero import Hero
 
 ARENA_NAME = "Paradox Ring"
 
+def battle(hero: Hero, enemy: Goblin):
+    """Simulate a battle between a hero and an enemy."""
+    print(f"\n{hero.name} engages in battle with {enemy.name}!")
 
+    while hero.is_alive and enemy.is_alive:
+        # Hero attacks first
+        damage = hero.attack()
+        enemy.take_damage(damage)
+
+        # Enemy attacks back if still alive
+        if enemy.is_alive:
+            damage = enemy.attack()
+            hero.take_damage(damage)
+
+    if hero.is_alive:
+        print(f"{hero.name} has defeated {enemy.name}!")
+    else:
+        print(f"{hero.name} has been defeated by {enemy.name}...")
+        
 def main():
     """Open the arena and introduce its first opponent."""
     print(f"Welcome to {ARENA_NAME}!")
@@ -36,16 +54,6 @@ def main():
     print(f"\nAttack Power: {hero.attack_power}")
 
     print(f"{hero.name} enters the arena with {hero.health} health.")
-
-    # Hero attacks first goblin
-    damage = hero.attack()
-    goblin.take_damage(damage)
-
-    # Goblin attacks back if still alive
-    goblin.take_damage(damage)
-    if goblin.is_alive:
-        damage = goblin.attack()
-        hero.take_damage(damage)
 
 
     print("But no hero has answered the call... yet.")
