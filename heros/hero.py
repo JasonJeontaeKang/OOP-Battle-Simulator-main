@@ -15,7 +15,7 @@ class Hero:
             return random.randint(1,self.attack_power)
         else:
             print("Critical Hit!")
-            return randon,randint(self.attack_power, self.attack_power + 10)
+            return random.randint(self.attack_power, self.attack_power + 10)
 
     def take_damage(self, damage):
         self.health -= damage
