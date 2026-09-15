@@ -5,7 +5,7 @@ from .Equipment import Equipment
 class Armor(Equipment):
 
     def __init__(self, slot):
-        rarity, durability = self.generate_rarity()
+        rarity = self.generate_rarity()
 
         super().__init__(
             name=slot,
@@ -13,7 +13,7 @@ class Armor(Equipment):
             slot=slot
         )
 
-        self.durability = durability
+        self.durability = self.generate_rarity_armor(rarity)
 
         print(
             f"{self.rarity} {self.name} "
