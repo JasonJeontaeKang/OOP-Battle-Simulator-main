@@ -1,14 +1,10 @@
+from enemy import Enemy
 import random
-
-
-class Goblin:
+class Goblin(Enemy):
     """A completed character class students can examine as an OOP example."""
 
     def __init__(self, name):
-        self.name = name
-        self.health = 100
-        self.attack_power = 15
-
+        super().__init__(name, 100, 15)
     def attack(self):
         """Return a random amount of damage."""
         return random.randint(1, self.attack_power)

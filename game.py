@@ -2,7 +2,7 @@ from enemies.goblin import Goblin
 from heros.equipment.weapons import Weapon
 from heros.equipment.armor import Armor
 from heros.heros.hero import Hero
-
+from enemies.boss import Boss
 
 ARENA_NAME = "Paradox Ring"
 
@@ -58,6 +58,9 @@ def main():
 
     print("But no hero has answered the call... yet.")
 
+    boss = Boss("The Goblin King")
+    print(f"{boss.name} enters the arena with {boss.health} health.")
+    boss.introduce()
 
 if __name__ == "__main__":
     main()
